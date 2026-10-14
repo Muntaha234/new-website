@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduPro offers online courses in web development, design, business and programming. Learn new skills at your own pace.">
+  <meta name="theme-color" content="#102a43">
+  <title>EduPro | Learn Skills for Your Future</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#home" aria-label="EduPro home">Edu<span>Pro.</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false"
+      aria-controls="navigation">☰</button>
+
+    <nav class="navigation" id="navigation">
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-button" href="#courses">Explore Courses</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR FUTURE STARTS HERE</span>
+        <h1>Learn Today.<br><span>Lead Tomorrow.</span></h1>
+        <p>
+          Upgrade your skills with practical online courses.
+          Learn at your own pace and take the next step toward
+          your goals.
+        </p>
+        <div class="hero-actions">
+          <a href="#courses" class="button primary">Explore Courses →</a>
+          <a href="#about" class="button secondary">Discover EduPro</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>Expert-led</strong><small>Learning content</small></div>
+          <div><strong>Self-paced</strong><small>Flexible learning</small></div>
+          <div><strong>Career-focused</strong><small>Practical skills</small></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Online learning illustration">
+        <div class="visual-orbit"></div>
+        <div class="learning-card">
+          <div class="book-icon">✦</div>
+          <span class="visual-label">YOUR LEARNING SPACE</span>
+          <h2>Build skills.<br>Build your future.</h2>
+          <div class="visual-line"></div>
+          <div class="visual-bottom">
+            <span>Learn something new</span><span>↗</span>
+          </div>
+        </div>
+        <div class="floating-note note-one">✦ Learn at your pace</div>
+        <div class="floating-note note-two">✓ Start with the basics</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <p>LEARN SKILLS THAT MATTER</p>
+      <div>💻 Technology</div>
+      <div>🎨 Creative Design</div>
+      <div>📈 Business</div>
+      <div>🚀 Career Growth</div>
+    </section>
+
+    <section class="section courses-section" id="courses">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">OUR LEARNING LIBRARY</span>
+          <h2>Explore popular courses</h2>
+          <p>Find a course that matches your interests and goals.</p>
+        </div>
+        <span class="course-count" id="courseCount">6 courses</span>
+      </div>
+
+      <div class="course-tools">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="courseSearch" type="search"
+            placeholder="Search courses..." aria-label="Search courses">
+        </label>
+        <div class="filters" id="categoryFilters" aria-label="Filter courses">
+          <button class="filter active" data-category="All" aria-pressed="true">All</button>
+          <button class="filter" data-category="Development" aria-pressed="false">Development</button>
+          <button class="filter" data-category="Design" aria-pressed="false">Design</button>
+          <button class="filter" data-category="Business" aria-pressed="false">Business</button>
+        </div>
+      </div>
+
+      <div class="course-grid" id="courseGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>
+        No courses found. Try another search or category.
+      </p>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-mark">E.</div>
+      <div>
+        <span class="eyebrow">WHY EDUPRO?</span>
+        <h2>Learning that fits your life.</h2>
+        <p>
+          Discover carefully organized learning resources, explore
+          in-demand skills, and create your own learning journey.
+          Our goal is to make learning simple, accessible and inspiring.
+        </p>
+        <a href="#courses" class="button light-button">Find Your Course →</a>
+      </div>
+      <div class="benefits">
+        <div><span>01</span><p><strong>Flexible learning</strong><br>Explore at your own pace.</p></div>
+        <div><span>02</span><p><strong>Practical topics</strong><br>Focus on useful skills.</p></div>
+        <div><span>03</span><p><strong>Clear course paths</strong><br>Choose your next step.</p></div>
+      </div>
+    </section>
+
+    <section class="newsletter section">
+      <span class="eyebrow">STAY IN THE LOOP</span>
+      <h2>Keep learning. Keep growing.</h2>
+      <p>Get learning updates and new course announcements.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" type="email" placeholder="Enter your email address"
+          autocomplete="email" required>
+        <button class="button primary" type="submit">Subscribe</button>
+      </form>
+      <p id="newsletterMessage" class="form-message" role="status"></p>
+      <small>This demo does not send or store email addresses.</small>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <a class="logo footer-logo" href="#home">Edu<span>Pro.</span></a>
+    <p>Learn with purpose. Grow with confidence.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#about">About</a>
+      <a href="mailto:hello@example.com">Email us</a>
+    </div>
+    <p class="copyright">© <span id="currentYear"></span> EduPro. All rights reserved.</p>
+  </footer>
+
+  <dialog id="courseDialog" class="course-dialog">
+    <button id="closeDialog" class="dialog-close" aria-label="Close course details">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
